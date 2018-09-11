@@ -26,10 +26,6 @@
         <b id="selected-instrument-label">Выбранный инструмент:</b>
         <b id="selected-instrument">Курсор</b>
       </div>
-      <div id="scale">
-        <b id="scale-word">Масштаб:</b>
-        <b id="scale-value">1.0</b>
-      </div>
       <div id="options">
           <div id="options-line">
               <div class="selector">
@@ -204,6 +200,24 @@
                   </ul>
               </div>
           </div>
+          <div id="options-zoom">
+              <div class="selector">
+                  <span class="selector-label">Масштаб:</span>
+                  <input style="width: 35px;" type="text" class="selector-field" />
+                  <button type="button" class="selector-button"><i style="color: white;" class="fas fa-sort-down"></i></button>
+                  <ul class="selector-ul">
+                      <li class="selector-li">0.25</li>
+                      <li class="selector-li">0.5</li>
+                      <li class="selector-li">0.75</li>
+                      <li class="selector-li">1</li>
+                      <li class="selector-li">1.25</li>
+                      <li class="selector-li">1.5</li>
+                      <li class="selector-li">2</li>
+                      <li class="selector-li">3</li>
+                      <li class="selector-li">4</li>
+                  </ul>
+              </div>
+          </div>
       </div>
     </header>
     <main>
@@ -263,7 +277,7 @@
       </div>
       <div id="back-panel">
         <div id="draw-panel">
-          <svg id="svg-panel" width="900" height="500" 
+          <svg id="svg-panel" width="900" height="500"
             xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
           </svg>
         </div>
@@ -288,7 +302,6 @@
     <script src="js/creature.js"></script>
     <script src="js/pipette.js"></script>
     <script src="js/colorpicker.js"></script>
-    <script src="js/zoom.js"></script>
     <script type="text/javascript">
         cp = ColorPicker(document.getElementById('pcr'), document.getElementById('picker'),
             (hex, hsv, rgb, mousePicker, mousepcr) => {

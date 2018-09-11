@@ -161,25 +161,6 @@ main li:focus-within ul {
   margin-left: 5px;
   color: #05b5b5;
 }
-
-#scale {
-  margin-left: 40px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 10pt;
-  display: flex;
-}
-
-#scale b {
-  margin: auto;
-  line-height: 100%;
-}
-
-#scale #scale-value {
-  margin-left: 5px;
-  color: #05b5b5;
-}
-
 .selector {
     margin: auto 0px auto 10px;
     display: flex;

@@ -14,20 +14,13 @@ var f = function(){
         }
         if(event.wheelDelta > 0 && q < 4.9){
             q += 0.1;
-
-            drawPanel.style.transform = 'scale(' + q + ')';
-            svgPanel.style.height = drawPanel.style.height;
-            svgPanel.style.width = drawPanel.style.width;
         }else{
             if(q < 0.3){
                 return;
             }
             q -= 0.1; 
-
-            drawPanel.style.transform = 'scale(' + q + ')';
-            svgPanel.style.height = drawPanel.style.height;
-            svgPanel.style.width = drawPanel.style.width;
         }
+        drawPanel.style.transform = 'scale(' + q + ')';
         scl.textContent = q.toFixed(1);
         event.preventDefault();
     }

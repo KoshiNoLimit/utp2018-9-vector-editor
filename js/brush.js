@@ -4,7 +4,7 @@
     Скрипт для инструмента кисть.
 */
 
-let dx,dy,shape,x,y,path,pathTaken = false;
+let dx,dy,shape,x,y,path,pathTaken,scale = false;
 let isDrawing=false;
 let width,linecap='round',linejoin='round';
 const brsh = document.getElementById('brush');
@@ -172,6 +172,7 @@ const crsr = document.getElementById('cursor');
     isDrawing = true;
     x = getMouseCoords(event).x;
     y = getMouseCoords(event).y;
+    scale = parseFloat(scl.textContent);
     shape = document.createElementNS(svgNS, "path");
     shape.setAttribute('fill', 'none');
     shape.setAttribute('stroke-width', width);
@@ -179,7 +180,7 @@ const crsr = document.getElementById('cursor');
     shape.setAttribute('stroke-linecap', linecap);
     shape.setAttribute('stroke-linejoin', linejoin);
 
-    path = 'M ' + x + ' ' + y + ' L ';
+    path = 'M ' + x/scale + ' ' + y/scale + ' L ';
     svgPanel.appendChild(shape);
 
   };
@@ -191,7 +192,8 @@ const crsr = document.getElementById('cursor');
     if (isDrawing) {
       x = getMouseCoords(event).x;
       y = getMouseCoords(event).y;
-      path +=x + ' ' + y + ' ';
+      scale = parseFloat(scl.textContent);
+      path +=x/scale + ' ' + y/scale + ' ';
       shape.setAttribute('d', path);
     }
   };
@@ -224,3 +226,4 @@ const crsr = document.getElementById('cursor');
 drawPanel.addEventListener('mousedown',start);
 
 changeThickness();
+
